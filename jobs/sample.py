@@ -6,7 +6,18 @@ import os
 import openpyxl
 # Read the input text file
 
+# # Initialize Spark session
+# spark = SparkSession.builder \
+#     .appName("ReadFromS3") \
+#     .config("spark.hadoop.fs.s3a.access.key","access") \
+#     .config("spark.jars.packages", "com.crealytics:spark-excel_2.12:0.13.5")\
+#     .config("spark.hadoop.fs.s3a.secret.key", "secret").getOrCreate()
 
+# # List of S3 object paths
+# s3_object_path = 's3://election-bucketv2/raw_data/maharastra-AC-2019.xlsx'
+
+# # Create an s3fs filesystem
+# s3 = s3fs.S3FileSystem(key=str(os.getenv("AWS_ACCESS_KEY_ID")), secret=str(os.getenv("AWS_SECRET_ACCESS_KEY")))
 
 # # Download the Excel file from S3 to a temporary local file
 # with s3.open(s3_object_path, 'rb') as s3_file:
